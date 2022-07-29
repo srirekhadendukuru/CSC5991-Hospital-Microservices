@@ -1,4 +1,4 @@
-FROM ghcr.io/codyben/csc5991-hospital-microservices/hospital-base:develop-main
+FROM ghcr.io/codyben/csc5991-hospital-microservices/hospital-base:main
 
 ENV SERVICE_NAME ambulance-microservice
 WORKDIR /app
