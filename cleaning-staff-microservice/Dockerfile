@@ -1,4 +1,4 @@
-FROM ghcr.io/MohsunSurti2/csc5991-hospital-microservices/hospital-base:develop-main
+FROM ghcr.io/codyben/csc5991-hospital-microservices/hospital-base:develop-main
 
 ENV SERVICE_NAME cleaning-staff-microservice
 WORKDIR /app
