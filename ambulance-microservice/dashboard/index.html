@@ -21,9 +21,9 @@
 <script>
 	"use strict";
 	function make_row(result) {
-		const {names, number, days_available,  times_available} = result;
+		const {name, number, days_available,  times_available} = result;
 		return `<div class="amb">
-			<p class="amb-name">Driver: ${names}</p>
+			<p class="amb-name">Driver: ${name}</p>
 			<p class="amb-phone">Ambulance Number: ${number}</p>
 			<p class="amb-avail">TIMES: ${days_available}</p>
 			<p class="amb-days">DAYS: ${times_available}</p>
