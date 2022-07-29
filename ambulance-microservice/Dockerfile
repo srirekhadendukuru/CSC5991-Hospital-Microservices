@@ -1,0 +1,11 @@
+FROM ghcr.io/MohsunSurti2/csc5991-hospital-microservices/hospital-base:develop-main
+
+ENV SERVICE_NAME ambulance-microservice
+WORKDIR /app
+
+ADD main.py .
+COPY dashboard/* ./dashboard/
+
+EXPOSE 80
+
+CMD ["python", "main.py"]
