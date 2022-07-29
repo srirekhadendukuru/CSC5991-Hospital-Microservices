@@ -15,7 +15,7 @@ def api():
     return requests.get(f"http://{GATEWAY_FQDN}/proxy/ambulance-reader/ambulance").json()
 
 @app.route('/api/<name>', methods=['GET'])
-def patient_api(name:str):
+def amulance_api(name:str):
     # not ideal, but postback so we can use Docker's internal networking easier.
     return requests.get(f"http://{GATEWAY_FQDN}/proxy/ambulance-reader/ambulance/{name}").json()
 
