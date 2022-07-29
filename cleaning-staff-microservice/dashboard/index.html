@@ -14,19 +14,19 @@
 		<p id="error">RESULTS OK</p>
 		<a href="#" onclick="loader()">REFRESH</a>
 	</div>
-	<div class="container" id="Ambulance">
+	<div class="container" id="cleaning">
 
 	</div>
 </body>
 <script>
 	"use strict";
 	function make_row(result) {
-		const {name, number, days_available,  times_available} = result;
-		return `<div class="amb">
-			<p class="amb-name">Driver: ${name}</p>
-			<p class="amb-phone">Ambulance Number: ${number}</p>
-			<p class="amb-avail">Days: ${days_available}</p>
-			<p class="amb-days">Times: ${times_available}</p>
+		const {name, cleaning_area, days_available,  times_available} = result;
+		return `<div class="clean">
+			<p class="clean-name">Staff Name: ${name}</p>
+			<p class="clean-phone">Cleaning Are: ${cleaning_area}</p>
+			<p class="clean-avail">Days: ${days_available}</p>
+			<p class="clean-days">Times: ${times_available}</p>
 			<a href="/api/${name}">Integration Permlink</a>
 			</div>`;
 	}
@@ -40,13 +40,13 @@
 			return response;
 		})
 		.then(response => response.data.data)
-		.then( (Ambulance) => {
-			document.getElementById("Ambulance").innerHTML = "";
-			Ambulance.forEach( (Ambulance) => {
-				document.getElementById("Ambulance").innerHTML += make_row(amb);
+		.then( (cleaning) => {
+			document.getElementById("cleaning").innerHTML = "";
+			cleaning.forEach( (cleaning) => {
+				document.getElementById("cleaning").innerHTML += make_row(amb);
 			})
 			document.getElementById("generated").innerHTML = new Date().toLocaleString();
-			document.getElementById("total").innerHTML = `${Ambulance.length} results returned`;
+			document.getElementById("total").innerHTML = `${cleaning.length} results returned`;
 		})
 	};
 
