@@ -153,6 +153,28 @@ services:
     networks:
       - external-network
 
+  cleaning-microservice:
+    build: ../cleaning-staff-microservice
+    ports:
+      - '5003:80'
+    depends_on:
+      - hospital-reader-gateway
+    stop_signal: SIGINT
+    hostname: hospital-cleaning-microservice.local
+    networks:
+      - external-network
+
+  ambulance-microservice:
+    build: ../ambulance-microservice
+    ports:
+      - '5004:80'
+    depends_on:
+      - hospital-reader-gateway
+    stop_signal: SIGINT
+    hostname: hospital-ambulance-microservice.local
+    networks:
+      - external-network
+
 networks:
   reader-network:
     name: reader-net

@@ -43,7 +43,7 @@
 		.then( (cleaning) => {
 			document.getElementById("cleaning").innerHTML = "";
 			cleaning.forEach( (cleaning) => {
-				document.getElementById("cleaning").innerHTML += make_row(amb);
+				document.getElementById("cleaning").innerHTML += make_row(cleaning);
 			})
 			document.getElementById("generated").innerHTML = new Date().toLocaleString();
 			document.getElementById("total").innerHTML = `${cleaning.length} results returned`;

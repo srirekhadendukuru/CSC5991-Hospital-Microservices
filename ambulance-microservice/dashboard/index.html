@@ -21,10 +21,10 @@
 <script>
 	"use strict";
 	function make_row(result) {
-		const {name, number, days_available,  times_available} = result;
+		const {name, ambulance_number, days_available,  times_available} = result;
 		return `<div class="amb">
 			<p class="amb-name">Driver: ${name}</p>
-			<p class="amb-phone">Ambulance Number: ${number}</p>
+			<p class="amb-phone">Ambulance Number: ${ambulance_number}</p>
 			<p class="amb-avail">Days: ${days_available}</p>
 			<p class="amb-days">Times: ${times_available}</p>
 			<a href="/api/${name}">Integration Permlink</a>
@@ -42,7 +42,7 @@
 		.then(response => response.data.data)
 		.then( (Ambulance) => {
 			document.getElementById("Ambulance").innerHTML = "";
-			Ambulance.forEach( (Ambulance) => {
+			Ambulance.forEach( (amb) => {
 				document.getElementById("Ambulance").innerHTML += make_row(amb);
 			})
 			document.getElementById("generated").innerHTML = new Date().toLocaleString();
